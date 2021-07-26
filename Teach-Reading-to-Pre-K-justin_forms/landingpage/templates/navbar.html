@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+{% block content %}
+  <ul>
+      <li><a href="#contact">Contact us</a></li>
+      <li><a href="#about">Our Mission</a></li>
+      <li><a href="riskfactorform">Risk Factor Screen</a></li>
+      <li><a href="dyslexiaform">Dyslexia Risk Evaluation Report</a></li>
+
+
+      {% if user.is_authenticated %}
+          <li style="float:right"><a class="active" href="users/logout">Log Out</a></li>
+          <li style="float:right"><a class="active" href="dashboard">Dashboard</a></li>
+          <li style="float:right">{{user.first_name}}</li>
+      {% else %}
+          <li style="float:right"><a class="active" href="users/register">Register</a></li>
+          <li style="float:right"><a class="active" href="users/login">Login</a></li>
+      {% endif %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,236 @@
+{% extends "base.html" %} {% load i18n %} {% block head_title %}{% trans
+"Register" %}{% endblock %} {% load crispy_forms_tags %} {% block content %}
+<div class="row justify-content-center">
+	<div class="col-md-6 col-sm-12">
+		<h1>{% trans "Dyslexia Risk Evaluation Report" %}</h1>
+	</div>
+</div>
+<style>
+	table {
+		border: 1px solid;
+	}
+
+	td {
+		border: 1px solid;
+	}
+</style>
+<div class="row justify-content-center">
+	<div class="col-md-6 col-sm-12">
+		<table>
+			<tr>
+				<br /><br /><br /><br /><br /><br />
+				<br /><br />
+				<h1>{% trans "Risk Analysis Reports for Student" %}</h1>
+			
+				<br /><br />
+
+				A screening test for pre-reading skills was administered to ________________ [populate first name]
+				on ________________ [populate date].
+				<br /><br />
+				The test showed the following results:
+				<br /><br />
+				<td></td>
+				<td>Result of screen</td>
+
+			</tr>
+			<tr>
+				<td>Letter Naming</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>Letter-sound Association</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>Sound Comparison</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>Phonemic Segmentation</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>Phonemic Blending</td>
+				<td></td>
+
+			</tr>
+
+
+		</table>
+		<br /><br />
+		______________ [populate first name] showed <br />
+		Low in ______________ skills.<br />
+		Emerging in __________ skills.<br />
+		On track in __________ skills.<br />
+		<br /><br />
+
+		The low and emerging results suggest that ___________ [first name] may be at risk for never becoming a fluent
+		reader. These results should be considered in grouping him or her in the lower performing groups in class, and
+		perhaps, it would be reasonable to provide targeted intervention. <br />
+		<br /> <br />
+
+		Some students will need more in-depth analysis of their clinical status based on their academic performance and
+		the results of this screener. Those students should be referred to a school psychologist, a psycho-educational
+		specialist, or a tester with experience in this area. The diagnosis of dyslexia should never be made by any
+		professional without a complete battery of psycho-educational tests.
+		<br /> <br />
+		<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+
+		<h1>{% trans "Risk Analysis Reports for School" %}</h1>
+
+		<br /> <br />
+		Date(s) of administration of screener:
+		<br /> <br />
+		Results of Pre-Reading Skills Screener
+		<br /> <br />
+		Students in the class:
+		<br /> <br />
+
+		<br /> <br />
+		<table>
+
+			<tr>
+
+				<td>Students:</td>
+				<td>Letter Naming</td>
+				<td>Letter-Sound association</td>
+				<td>Sound Comparison</td>
+				<td>Phonemic Segmentation</td>
+				<td>Phonemic Blending</td>
+
+			</tr>
+
+			<tr>
+
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
+			</tr>
+		</table>
+
+		<br /> <br /> <br /> <br /> <br /> <br />
+		<table>
+
+			<tr>
+				<td>Students:</td>
+				<td>Risks Questions</td>
+				<td>Letter Naming</td>
+				<td>Letter-Sound association</td>
+				<td>Sound Comparison</td>
+				<td>Phonemic Segmentation</td>
+				<td>Phonemic Blending</td>
+
+			</tr>
+
+			<tr>
+
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
+			</tr>
+		</table>
+
+		<br /> <br />
+
+		<br /> <br />
+
+		<br /> <br />
+
+		<br /> <br />
+
+		<br /> <br />
+
+		<br /> <br />
+		</di v>
+	</div>
+
+	{% endblock %}

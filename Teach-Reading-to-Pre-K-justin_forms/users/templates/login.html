@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Login" %}{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-sm-12">
+    <h1>{% trans "Login Page" %}</h1>
+
+    <p>{% blocktrans %}If you have not created an account yet, then please
+    <a href="register">Register</a> first.{% endblocktrans %}</p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-6 col-sm-12">
+    <form class="site-form" method="POST" action="{% url 'users:login' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <div class="d-grid gap-2">
+        <button class="mt-3 btn btn-dark primaryAction" type="submit">{% trans "Sign In" %}</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

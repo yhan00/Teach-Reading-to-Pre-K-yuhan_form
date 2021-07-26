@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Test Template</title>
+</head>
+<body>
+<audio id ="audio" controls>
+    <source src="{% static 'promptaudio/part1/Q15-I.mp3' %}" type="audio/mp3">
+    Your browser does not support audio.
+</audio>
+<script>
+    const answerAudio = [];
+    answerAudio[0] = new Audio("{% static 'answeraudio/letters/E.mp3' %}");
+    answerAudio[1] = new Audio("{% static 'answeraudio/letters/L.mp3' %}");
+    answerAudio[2] = new Audio("{% static 'answeraudio/letters/I.mp3' %}");
+
+    function playAudio(audioIndex)
+    {
+        answerAudio[audioIndex].play();
+    }
+</script>
+<svg width="5000" height="2000">
+    <rect x="5" y="5" width="1500.026" height="913"
+          style="fill: rgb(245, 237, 12); stroke: rgb(69, 142, 193); stroke-linecap: round; stroke-miterlimit: 19; stroke-linejoin: round;"/>
+    <rect x="138.818" y="154.219" width="410.407" height="556.437"
+          style="fill: rgb(255, 255, 255); fill-rule: nonzero; stroke: rgb(0, 3, 5); paint-order: stroke; stroke-width: 2px;"/>
+    <rect width="193.133" height="187.587" style="fill: rgb(98, 118, 223);" x="736.654" y="89.027"/>
+    <rect y="331.397" width="193.133" height="187.587" style="fill: rgb(98, 118, 223);" x="737.334"/>
+    <rect x="739.348" y="570.626" width="193.133" height="187.587" style="fill: rgb(98, 118, 223);"/>
+
+
+    <!--
+     URL changes to #Choice1, #Choice2, and #Choice3.
+    -->
+    <a href="#Choice1" id="Choice1" onclick="playAudio(0)">
+        <rect id="Choice1Rect" x="761.119" y="117.56" width="140" height="124" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+        <text x="407.857" y="133.15" style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Roboto Slab&quot;; font-size: 46px;" transform="matrix(2.18289, 0, 0, 2.286953, -85.747566, -101.167587)">e</text>
+    </a>
+    <a href="#Choice2" id="Choice2" onclick="playAudio(1)">
+        <rect x="762.785" y="361.769" width="140.362" height="124.292" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+        <text x="406.326" y="244.909" style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Roboto Slab&quot;; font-size: 46px;" transform="matrix(2.18289, 0, 0, 2.286953, -85.747566, -101.167587)">l</text>
+    </a>
+    <a href="#Choice3" id="Choice3"  onclick="playAudio(2)">
+        <rect x="766.127" y="598.101" width="140.362" height="124.292" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+        <text x="408.624" y="341.36" style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Roboto Slab&quot;; font-size: 46px;" transform="matrix(2.18289, 0, 0, 2.286953, -85.747566, -101.167587)">i</text>
+    </a>
+
+
+    <!--
+      When pressing done button based on current question (maybe through an ID for question),
+      read URL, and if answer choice is correct, then add +1 to child's points in the database
+    -->
+    <a href="#donebtn" onclick="checkAnswer()">
+        <rect x="1158.799" y="390.654" width="197.175" height="99.784" style="fill: rgb(125, 203, 255); stroke: rgb(0, 0, 0);"/>
+        <text x="374.633" y="159.899" style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Roboto Slab&quot;; font-size: 28px;" transform="matrix(1.792978, 0, 0, 1.664429, 518.827332, 192.636871)">DONE</text>
+    </a>
+
+</svg>
+
+<script>
+    function Choice1Selected() {
+        document.getElementById("Choice1Rect").style.color = "yellow";
+    }
+
+    function checkAnswer() {
+        if (window.location.href == "http://127.0.0.1:8000/exam/q15/#Choice3") {
+            alert("Correct Answer!");
+            setTimeout(function () {
+
+                location.href = "http://127.0.0.1:8000/exam/q16"
+
+            }, 3000);
+
+        } else {
+            alert("Incorrect answer");
+            setTimeout(function () {
+
+                location.href = "http://127.0.0.1:8000/exam/q16"
+
+            }, 3000);
+        }
+    }
+
+</script>
+
+</body>
+</html>

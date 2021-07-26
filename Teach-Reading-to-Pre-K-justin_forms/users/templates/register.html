@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% load i18n %} {% block head_title %}{% trans
+"Register" %}{% endblock %} {% load crispy_forms_tags %} {% block content %}
+<div class="row justify-content-center">
+	<div class="col-md-6 col-sm-12">
+		<h1>{% trans "Register" %}</h1>
+		<p>
+			{% blocktrans %}Already have an account? Then please
+			<a href="login">log in</a>.{% endblocktrans %}
+		</p>
+		{% for message in messages %}
+		<div class="alert alert-danger" role="alert">
+			{{message}}
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<div class="row justify-content-center">
+	<div class="col-md-6 col-sm-12">
+		<form class="signup" id="register_form" method="POST" action="register">
+			{% csrf_token %} {{ form|crispy }}
+			<div class="d-grid gap-2">
+				<button class="mt-3 btn btn-dark btn-block" type="submit">
+					{% trans "Register" %} &raquo;
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}
